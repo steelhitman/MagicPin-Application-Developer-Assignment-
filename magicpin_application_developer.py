@@ -1,5 +1,4 @@
 password=list(raw_input().strip().split(','))
-#print password
 for p in password:
     special=["*","$","_","#","=","@"]
     non=["%","!","(",")"]
