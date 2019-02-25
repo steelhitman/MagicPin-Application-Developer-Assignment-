@@ -1,1 +1,1 @@
-# MagicPin-Application-Developer-Assignment-
+# MagicPin-Application-Developer-Assignment
