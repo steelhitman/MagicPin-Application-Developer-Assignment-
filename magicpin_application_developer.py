@@ -1,12 +1,9 @@
 password=list(raw_input().strip().split(','))
+#print password
 for p in password:
     special=["*","$","_","#","=","@"]
     non=["%","!","(",")"]
-    f1=0
-    f2=0
-    f3=0
-    f4=0
-    f5=0
+    f=[0]*5
     if len(p)<6:
         print p,"Failure Password must be at least 6 characters long."
         continue
@@ -15,25 +12,25 @@ for p in password:
         continue
     for i in p:
         if i>=chr(65) and i<=chr(90):
-            f3+=1
+            f[2]+=1
         elif i>=chr(97) and i<=chr(122):
-            f1+=1
+            f[0]+=1
         elif i>=chr(48) and i<=chr(57):
-            f2+=1
+            f[1]+=1
         elif i in special:
-            f4+=1
+            f[3]+=1
         elif i in non:
-            f5+=1
+            f[4]+=1
             break
-    if f1==0:
+    if f[0]==0:
         print p,"Failure Password must contain at least one letter from a-z."
-    elif f2==0:
+    elif f[1]==0:
         print p,"Failure Password must contain at least one letter from 0-9."
-    elif f3==0:
+    elif f[2]==0:
         print p,"Failure Password must contain at least one letter from A-Z."
-    elif f4==0:
+    elif f[3]==0:
         print p,"Failure Password must contain at least one letter from *$_#=@."
-    elif f5!=0:
+    elif f[4]!=0:
         print p,"Failure Password cannot contain %!)(."
     else:
         print p,"Success"
